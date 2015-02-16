@@ -5,13 +5,13 @@ export default {
   name: 'ember-idx-tabs',
   initialize: function() {
     if (!Em.Config) {
-        Em.Config = Config = Config.create()
+        Em.Config = Config.create()
     }
 
-    var defaultConfig = Config.getConfig('default');
+    var defaultConfig = Em.Config.getConfig('default');
     if (!defaultConfig) {
-        Config.addConfig('default');
-        defaultConfig = Config.getConfig('default');
+        Em.Config.addConfig('default');
+        defaultConfig = Em.Config.getConfig('default');
     }
 
     defaultConfig['tabs'] = {
@@ -25,10 +25,10 @@ export default {
     }
 
     //Bootstrap
-    var bsConfig = Config.getConfig('bs');
+    var bsConfig = Em.Config.getConfig('bs');
     if (!bsConfig) {
-        Config.addConfig('bs');
-        bsConfig = Config.getConfig('bs');
+        Em.Config.addConfig('bs');
+        bsConfig = Em.Config.getConfig('bs');
     }
     bsConfig['tabs'] = {
         tabTag: ['li'],
